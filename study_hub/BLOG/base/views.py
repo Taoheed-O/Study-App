@@ -18,6 +18,7 @@ from .forms import RoomForm
 #     {'id':3, 'name':'Backend development'}
 # ]
  
+
 def loginPage(request):
     page = 'login'
 
