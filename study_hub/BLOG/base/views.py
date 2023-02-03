@@ -108,7 +108,9 @@ def userProfile(request, pk):
 def createRoom(request):
     form = RoomForm(request.POST)
     if form.is_valid():
-        form.save()
+        room = form.save(commit=False)
+        room.host = request.user
+        room.save()
         return redirect('home')
     context = {'form': form}
     return render(request, 'room_form.html', context)
