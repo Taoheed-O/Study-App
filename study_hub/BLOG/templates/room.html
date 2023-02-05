@@ -1,4 +1,5 @@
 {% extends 'main.html' %}
+
 {% block content %}
 
 
@@ -8,7 +9,7 @@
         <div class="room">
           <div class="room__top">
             <div class="room__topLeft">
-              <a href="{% url 'home' %}">
+              <a href="home.html">
                 <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
                   <title>arrow-left</title>
                   <path
@@ -122,83 +123,6 @@
                     adipisci nam maxime.
                   </div>
                 </div>
-                <div class="thread">
-                  <div class="thread__top">
-                    <div class="thread__author">
-                      <a href="#" class="thread__authorInfo">
-                        <div class="avatar avatar--small">
-                          <img src="https://randomuser.me/api/portraits/men/37.jpg" />
-                        </div>
-                        <span>@dennis_ivy</span>
-                      </a>
-                      <span class="thread__date">3 day ago</span>
-                    </div>
-                    <div class="thread__delete">
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                        <title>remove</title>
-                        <path
-                          d="M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="thread__details">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, deserunt cum quibusdam aliquam
-                    nihil unde et impedit, sequi, modi quos porro iure enim suscipit itaque earum tenetur praesentium
-                    quaerat! Corporis praesentium aspernatur autem laboriosam natus similique, adipisci nam maxime.
-                  </div>
-                </div>
-                <div class="thread">
-                  <div class="thread__top">
-                    <div class="thread__author">
-                      <a href="#" class="thread__authorInfo">
-                        <div class="avatar avatar--small">
-                          <img src="https://randomuser.me/api/portraits/men/37.jpg" />
-                        </div>
-                        <span>@dennis_ivy</span>
-                      </a>
-                      <span class="thread__date">3 day ago</span>
-                    </div>
-                    <div class="thread__delete">
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                        <title>remove</title>
-                        <path
-                          d="M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="thread__details">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, deserunt cum quibusdam aliquam
-                    nihil unde et impedit, sequi, modi quos porro iure enim suscipit itaque earum tenetur praesentium
-                    quaerat! Corporis praesentium aspernatur autem laboriosam natus similique, adipisci nam maxime.
-                  </div>
-                </div>
-                <div class="thread">
-                  <div class="thread__top">
-                    <div class="thread__author">
-                      <a href="#" class="thread__authorInfo">
-                        <div class="avatar avatar--small">
-                          <img src="https://randomuser.me/api/portraits/men/37.jpg" />
-                        </div>
-                        <span>@dennis_ivy</span>
-                      </a>
-                      <span class="thread__date">3 day ago</span>
-                    </div>
-                    <div class="thread__delete">
-                      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
-                        <title>remove</title>
-                        <path
-                          d="M27.314 6.019l-1.333-1.333-9.98 9.981-9.981-9.981-1.333 1.333 9.981 9.981-9.981 9.98 1.333 1.333 9.981-9.98 9.98 9.98 1.333-1.333-9.98-9.98 9.98-9.981z"
-                        ></path>
-                      </svg>
-                    </div>
-                  </div>
-                  <div class="thread__details">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nobis, deserunt cum quibusdam aliquam
-                    nihil unde et impedit, sequi, modi quos porro iure enim suscipit itaque earum tenetur praesentium.
-                  </div>
-                </div>
               </div>
             </div>
           </div>
@@ -212,8 +136,7 @@
         <div class="participants">
           <h3 class="participants__top">Participants <span>{{participants.count}}</span></h3>
           <div class="participants__list scroll">
-            {% for user in participants %}
-            <a href="{% url 'user-profile' user.id%}" class="participant">
+            <a href="{% url 'user-profile' user.id %}" class="participant">
               <div class="avatar avatar--medium">
                 <img src="https://randomuser.me/api/portraits/men/37.jpg" />
               </div>
@@ -222,11 +145,10 @@
                 <span>@{{user.username}}</span>
               </p>
             </a>
-            {% endfor %}
           </div>
         </div>
         <!--  End -->
       </div>
     </main>
     <script src="script.js"></script>
-{% endblock content %}
+{% endblock %}
