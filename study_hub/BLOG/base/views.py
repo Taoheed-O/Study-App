@@ -77,7 +77,7 @@ def room(request, pk):
         room.participants.add(request.user)
         return redirect('room', pk=room.id)
 
-    context = {'room_messages': room_messages, 'participants':participants}
+    context = {'room':room, 'room_messages': room_messages, 'participants':participants}
     return render(request, 'room.html',context)
 
 
@@ -129,7 +129,7 @@ def updateRoom(request, pk):
             form.save()
             return redirect('home')
 
-    context = {'form': form}
+    context = {'room':room, 'form': form}
     return render(request, 'room_form.html', context)
 
 
