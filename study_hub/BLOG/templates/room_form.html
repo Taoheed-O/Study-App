@@ -24,7 +24,14 @@
 
             <div class="form__group">
               <label for="room_topic">Topic</label>
-              {{form.name}}
+              <input required type="text" value="{{room.topic}}" name="topic" list="topic-list">
+              <datalist id="topic-list">
+                <select id="room-topic">
+                  {% for topic in topics %}
+                  <option value="{{ topic.name }}">{{topic.name}}</option>
+                  {% endfor %}
+                </select>
+              </datalist>
             </div>
 
             <div class="form__group">
@@ -54,7 +61,7 @@
             
             <div class="form__action">
               <a class="btn btn--dark" href="{% url 'home' %}">Cancel</a>
-              <button class="btn btn--main" type="submit">Create Room</button>
+              <button class="btn btn--main" type="submit">Submit</button>
             </div>
           </form>
         </div>
