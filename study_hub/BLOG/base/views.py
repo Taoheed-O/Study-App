@@ -184,6 +184,5 @@ def updateUser(request):
     user = request.user
     form = UserForm(instance=user)
     context = {"form":form}
-
     
     return render(request, 'update-user.html', context)
