@@ -10,6 +10,11 @@ from django.contrib.auth.decorators import login_required
 def home(request):
     return render(request, 'index.html')
 
+
+@login_required(login_url='signin')
+def settings(request):
+    return render(request, 'settings.html')
+
 @login_required(login_url='signin')
 def signup(request):
     if request.method == 'POST':
