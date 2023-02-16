@@ -13,7 +13,33 @@ def home(request):
 
 @login_required(login_url='signin')
 def settings(request):
-    return render(request, 'settings.html')
+    user_profile = Profile.objects.get(user=request.user)
+    if request.method == 'POST':
+        if request.FILES.get('image') == None:
+            image = user_profile.profile_img
+            bio = request.POST['bio']
+            location = request.POST['location']
+
+            user_profile.profile_img = image
+            user_profile.bio = bio
+            user_profile.location = location
+            user_profile.save()
+        
+        if request.FILES.get('image') != None:
+            image = request.FILES.get('image')
+            bio = request.POST['bio']
+            location = request.POST['location']
+
+            user_profile.profile_img = image
+            user_profile.bio = bio
+            user_profile.location = location
+            user_profile.save()
+
+        return redirect('settings')
+
+
+    context = {"user_profile":user_profile}
+    return render(request, 'settings.html', context)
 
 
 @login_required(login_url='signin')
