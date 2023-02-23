@@ -17,7 +17,6 @@ from .forms import RoomForm, UserForm, MyUserForm
 #     {'id':2, 'name':'lets do web development'},
 #     {'id':3, 'name':'Backend development'}
 # ]
- 
 
 def loginPage(request):
     page = 'login'
